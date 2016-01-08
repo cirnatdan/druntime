@@ -95,6 +95,10 @@ else version( DragonFlyBSD )
 {
     int posix_memalign(void**, size_t, size_t);
 }
+else version( NetBSD )
+{
+    int posix_memalign(void**, size_t, size_t);
+}
 else version( Solaris )
 {
     int posix_memalign(void**, size_t, size_t);
@@ -136,6 +140,13 @@ else version( DragonFlyBSD )
 
     void* valloc(size_t); // LEGACY non-standard
 }
+else version( NetBSD )
+{
+    int setenv(in char*, in char*, int);
+    int unsetenv(in char*);
+
+    void* valloc(size_t); // LEGACY non-standard
+}
 else version( CRuntime_Bionic )
 {
     int setenv(in char*, in char*, int);
@@ -171,6 +182,10 @@ else version( FreeBSD )
     int rand_r(uint*);
 }
 else version( DragonFlyBSD )
+{
+    int rand_r(uint*);
+}
+else version( NetBSD )
 {
     int rand_r(uint*);
 }
@@ -357,7 +372,11 @@ else version( FreeBSD )
     void   srandom(uint);
     int    unlockpt(int);
 }
+<<<<<<< HEAD
 else version( DragonFlyBSD )
+=======
+else version( NetBSD )
+>>>>>>> aeff386b (WIP: Add NetBSD support)
 {
     //WNOHANG     (defined in core.sys.posix.sys.wait)
     //WUNTRACED   (defined in core.sys.posix.sys.wait)

@@ -18,6 +18,8 @@ else version (FreeBSD)
     public import rt.sections_elf_shared;
 else version (DragonFlyBSD)
     public import rt.sections_elf_shared;
+else version (NetBSD)
+    public import rt.sections_elf_shared;
 else version (Solaris)
     public import rt.sections_solaris;
 else version (OSX)

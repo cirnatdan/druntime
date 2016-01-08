@@ -278,6 +278,10 @@ version( DragonFlyBSD )
 {
     enum P_tmpdir  = "/var/tmp/";
 }
+version( NetBSD )
+{
+    enum P_tmpdir  = "/var/tmp/";
+}
 version( Solaris )
 {
     enum P_tmpdir  = "/var/tmp/";

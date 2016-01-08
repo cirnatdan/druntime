@@ -314,6 +314,13 @@ else version(DragonFlyBSD) enum ClockType
     uptimeCoarse = 9,
     uptimePrecise = 10,
 }
+else version(NetBSD) enum ClockType
+{
+    normal = 0,
+    coarse = 2,
+    precise = 3,
+    second = 6,
+}
 else version(Solaris) enum ClockType
 {
     normal = 0,
@@ -366,6 +373,17 @@ version(Posix)
             case uptime: return CLOCK_UPTIME;
             case uptimeCoarse: return CLOCK_UPTIME_FAST;
             case uptimePrecise: return CLOCK_UPTIME_PRECISE;
+            case second: assert(0);
+            }
+        }
+        else version(NetBSD)
+        {
+            import core.sys.netbsd.time;
+            with(ClockType) final switch(clockType)
+            {
+            case coarse: return CLOCK_MONOTONIC;
+            case normal: return CLOCK_MONOTONIC;
+            case precise: return CLOCK_MONOTONIC;
             case second: assert(0);
             }
         }

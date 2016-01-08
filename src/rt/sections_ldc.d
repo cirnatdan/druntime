@@ -19,6 +19,7 @@ module rt.sections_ldc;
 version (linux) {}
 else version (FreeBSD) {}
 else version (DragonFlyBSD) {}
+else version (NetBSD) {}
 else version(LDC):
 
 import core.stdc.stdlib : alloca;

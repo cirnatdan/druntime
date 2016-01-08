@@ -3,6 +3,7 @@ import core.runtime, core.stdc.stdio, core.thread;
 version (linux) import core.sys.linux.dlfcn;
 else version (FreeBSD) import core.sys.freebsd.dlfcn;
 else version (DragonFlyBSD) import core.sys.dragonflybsd.dlfcn;
+else version (NetBSD) import core.sys.netbsd.dlfcn;
 else static assert(0, "unimplemented");
 
 void loadSym(T)(void* handle, ref T val, const char* mangle)
