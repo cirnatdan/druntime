@@ -456,6 +456,11 @@ else version( DragonFlyBSD )
 }
 else version( NetBSD )
 {
+    enum F_DUPFD        = 0;
+    enum F_GETFD        = 1;
+    enum F_SETFD        = 2;
+    enum F_GETFL        = 3;
+    enum F_SETFL        = 4;
     enum F_SETLK        = 8;
     enum F_SETLKW       = 9;
     enum F_CLOSEM       = 10;

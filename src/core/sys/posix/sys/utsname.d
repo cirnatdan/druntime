@@ -53,7 +53,6 @@ else version(FreeBSD)
 
     int uname(utsname* __name);
 }
-<<<<<<< HEAD
 else version(Solaris)
 {
     private enum SYS_NMLN = 257;

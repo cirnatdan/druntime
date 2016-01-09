@@ -781,6 +781,7 @@ else version (FreeBSD) bool findDSOInfoForAddr(in void* addr, dl_phdr_info* resu
 else version (DragonFlyBSD) bool findDSOInfoForAddr(in void* addr, dl_phdr_info* result=null) nothrow @nogc
 {
     return !!_rtld_addr_phdr(addr, result);
+}
 else version (NetBSD) bool findDSOInfoForAddr(in void* addr, dl_phdr_info* result=null) nothrow @nogc
 {
     static struct DG { const(void)* addr; dl_phdr_info* result; }
